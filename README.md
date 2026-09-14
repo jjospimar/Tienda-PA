@@ -1,6 +1,6 @@
 # Tienda Escolar - Consola
 
-Aplicativo de consola desarrollado en Java que permite gestionar 
+Aplicativo de consola desarrollado en Python que permite gestionar 
 operaciones básicas de una tienda escolar: registrar productos, calcular el 
 total de una compra y mostrar la información registrada.
 
@@ -13,4 +13,4 @@ total de una compra y mostrar la información registrada.
 ## Integrantes
 - [Nombre 1]
 - [Nombre 2]
-- [Nombre 3]
+- Santiago Mora - 20251005020
