@@ -4,4 +4,5 @@ def mostrar_informacion(productos):
     return
 
 print(" Productos registrados ")
-
+for i, producto in enumerate(productos, start=1):
+  print(f"{i}. {producto['nombre']} - ${producto['precio']:.2f}")
