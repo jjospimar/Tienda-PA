@@ -11,6 +11,6 @@ total de una compra y mostrar la información registrada.
 - Mostrar la información registrada
 
 ## Integrantes
-- [Nombre 1]
-- [Nombre 2]
+- Hernan Rodríguez
+- Juan Ospina - 20251005036
 - Santiago Mora - 20251005020
