@@ -1,5 +1,4 @@
 def registrar_producto():
-    """Pide al usuario el nombre y precio de un producto y lo devuelve."""
     nombre = input("Nombre del producto: ")
     
     while True:
@@ -11,9 +10,7 @@ def registrar_producto():
     
     return {"nombre": nombre, "precio": precio}
 
-
 def registrar_varios_productos():
-    """Permite registrar varios productos hasta que el usuario decida parar."""
     productos = []
     
     while True:
