@@ -1,0 +1,3 @@
+from producto import registrar_producto, registrar_varios_productos
+from compra import calcular_total_compra
+from informacion import mostrar_informacion, buscar_producto_por_nombre
