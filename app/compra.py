@@ -1,35 +1,35 @@
 """
 MÓDULO: compra.py
 RESPONSABLE: Santiago Mora (Cálculo del total de compra)
-
 """
 
-def calcular_total_compra((parametro lista productos)):
-    if not (parametro lista productos):
+def calcular_total_compra(productos):
+    if not productos:
         return 0.0
 
     total_acumulado = 0.0
 
-    for producto in (parametro lista productos):
-        precio_unitario = producto.get("(clave precio)", 0.0)
-        cantidad_unidades = producto.get("(clave cantidad)", 1)
+    for producto in productos:
+        # Extrae el precio y la cantidad (por defecto 1 si no existe la clave)
+        precio_unitario = producto.get("precio", 0.0)
+        cantidad_unidades = producto.get("cantidad", 1)
         total_acumulado += precio_unitario * cantidad_unidades
 
     return total_acumulado
 
 
-def aplicar_descuento(total_acumulado, (parametro porcentaje descuento)):
-    if (parametro porcentaje descuento) < 0 or (parametro porcentaje descuento) > 100:
+def aplicar_descuento(total_acumulado, porcentaje_descuento):
+    if porcentaje_descuento < 0 or porcentaje_descuento > 100:
         return total_acumulado
 
-    monto_descuento = total_acumulado * ((parametro porcentaje descuento) / 100.0)
+    monto_descuento = total_acumulado * (porcentaje_descuento / 100.0)
     return total_acumulado - monto_descuento
 
 
 if __name__ == "__main__":
     datos_prueba = [
-        {"(clave precio)": 5000, "(clave cantidad)": 2},
-        {"(clave precio)": 1200, "(clave cantidad)": 3}
+        {"precio": 5000, "cantidad": 2},
+        {"precio": 1200, "cantidad": 3}
     ]
 
     total_obtenido = calcular_total_compra(datos_prueba)
