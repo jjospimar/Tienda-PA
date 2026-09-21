@@ -1,7 +1,3 @@
-"""
-MÓDULO: compra.py
-RESPONSABLE: Santiago Mora (Cálculo del total de compra)
-"""
 
 def calcular_total_compra(productos):
     if not productos:
@@ -10,7 +6,6 @@ def calcular_total_compra(productos):
     total_acumulado = 0.0
 
     for producto in productos:
-        # Extrae el precio y la cantidad (por defecto 1 si no existe la clave)
         precio_unitario = producto.get("precio", 0.0)
         cantidad_unidades = producto.get("cantidad", 1)
         total_acumulado += precio_unitario * cantidad_unidades
