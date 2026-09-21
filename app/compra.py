@@ -32,3 +32,18 @@ if __name__ == "__main__":
 
     total_con_desc = aplicar_descuento(total_obtenido, 10)
     print(f"Total con 10% descuento: ${total_con_desc:,.2f}")
+
+def generar_recibo(productos, total_acumulado, total_final, porcentaje_descuento=0):
+    print("\n" + "="*35)
+    print("        TIENDA ESCOLAR - RECIBO")
+    print("="*35)
+    for prod in productos:
+        precio = prod.get("precio", 0.0)
+        print(f"- {prod['nombre']:<18} ${precio:>7.2f}")
+    print("-" * 35)
+    print(f"Subtotal:           ${total_acumulado:>8.2f}")
+    if porcentaje_descuento > 0:
+        monto_desc = total_acumulado - total_final
+        print(f"Descuento ({porcentaje_descuento}%):      -${monto_desc:>8.2f}")
+    print(f"TOTAL A PAGAR:      ${total_final:>8.2f}")
+    print("="*35)
