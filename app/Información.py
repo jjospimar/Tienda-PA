@@ -15,3 +15,15 @@ def buscar_producto_por_nombre(productos):
             print(f"Encontrado: {producto['nombre']} - ${producto['precio']:.2f}\n")
             return
   print(f"No se encontró ningún producto con el nombre '{nombre_buscado}'.\n")
+
+def eliminar_producto(productos):
+  if not productos:
+    print("No hay productos registrados para eliminar\n")
+    return
+    nombre_buscado=input("Escribe el nombre del producto a eliminar: ")
+    for i, producto in enumerate(productos):
+      if producto["nombre"].lower()==nombre_buscado.lower():
+        eliminado = productos.pop(i)
+        print("Producto '{eliminado['nombre']}' eliminado")
+        return
+    print("No se encontró el producto")
