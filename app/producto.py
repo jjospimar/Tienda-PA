@@ -13,13 +13,14 @@ def registrar_producto():
 def registrar_varios_productos():
     productos = []
     
-    while True:
+    registrando = True
+    while registrando:
         producto = registrar_producto()
         productos.append(producto)
         print(f"Producto '{producto['nombre']}' registrado con éxito.\n")
         
-        continuar = input("¿Deseas registrar otro producto? (s/n): ").lower()
+        continuar = input("¿Deseas registrar otro producto? (s/n): ").strip().lower()
         if continuar != "s":
-            break
+            registrando = False
     
     return productos
