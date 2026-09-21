@@ -1,6 +1,6 @@
 from producto import registrar_varios_productos
 from compra import calcular_total_compra, aplicar_descuento
-from Informacion import mostrar_informacion, buscar_producto_por_nombre
+from Informacion import mostrar_informacion, buscar_producto_por_nombre, eliminar_producto
 
 def menu():
     lista_productos = []
