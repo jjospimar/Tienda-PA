@@ -27,25 +27,24 @@ def menu():
         elif opcion == "4":
             if not lista_productos:
                 print("\nNo hay productos en la lista para calcular.")
-                continue
-
-            total = calcular_total_compra(lista_productos)
-            print(f"\nTotal acumulado de la compra: ${total:,.2f}")
-
-            porcentaje = 0.0
-            total_final = total
-            desc = input("¿Deseas aplicar descuento? (s/n): ").lower()
-            if desc == "s":
-                try:
-                    porcentaje = float(input("Porcentaje de descuento: "))
-                    total_final = aplicar_descuento(total, porcentaje)
-                    print(f"Total final con descuento: ${total_final:,.2f}")
-                except ValueError:
-                    print("Porcentaje no válido.")
-
-            imprimir = input("¿Deseas generar el recibo? (s/n): ").lower()
-            if imprimir == "s":
-                generar_recibo(lista_productos, total, total_final, porcentaje)
+            else:
+                total = calcular_total_compra(lista_productos)
+                print(f"\nTotal acumulado de la compra: ${total:,.2f}")
+                
+                porcentaje = 0.0
+                total_final = total
+                desc = input("¿Deseas aplicar descuento? (s/n): ").strip().lower()
+                if desc == "s":
+                    try:
+                        porcentaje = float(input("Porcentaje de descuento: "))
+                        total_final = aplicar_descuento(total, porcentaje)
+                        print(f"Total final con descuento: ${total_final:,.2f}")
+                    except ValueError:
+                        print("Porcentaje no válido.")
+                
+                imprimir = input("¿Deseas generar el ticket de compra? (s/n): ").strip().lower()
+                if imprimir == "s":
+                    generar_recibo(lista_productos, total, total_final, porcentaje)
         elif opcion == "5":
             eliminar_producto(lista_productos)
         elif opcion == "6":
