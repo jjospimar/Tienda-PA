@@ -1,5 +1,5 @@
 from producto import registrar_varios_productos
-from compra import calcular_total_compra, aplicar_descuento, generar_recibo
+from compra import calcular_total_compra, aplicar_descuento, generar_recibo, nueva_compra
 from Informacion import mostrar_informacion, buscar_producto_por_nombre, eliminar_producto
 
 def menu():
@@ -12,12 +12,14 @@ def menu():
         print("3. Buscar producto")
         print("4. Calcular total de compra")
         print("5. Eliminar un producto")
-        print("6. Salir")
+        print("6. Iniciar nueva compra")
+        print("7. Salir")
         
-        opcion = input("Selecciona una opción: ")
+        opcion = input("Selecciona una opción: ").strip()
         
         if opcion == "1":
-            lista_productos.extend(registrar_varios_productos())
+            nuevos = registrar_varios_productos()
+            lista_productos.extend(nuevos)
         elif opcion == "2":
             mostrar_informacion(lista_productos)
         elif opcion == "3":
@@ -47,8 +49,14 @@ def menu():
         elif opcion == "5":
             eliminar_producto(lista_productos)
         elif opcion == "6":
+            nueva_compra(lista_productos)
+            
+        elif opcion == "7":
             print("¡Gracias por usar el sistema!")
-        break
+            break
+            
+        else:
+            print("Opción inválida, intenta de nuevo.")
 
 if __name__ == "__main__":
     menu()
