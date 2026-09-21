@@ -47,3 +47,16 @@ def generar_recibo(productos, total_acumulado, total_final, porcentaje_descuento
         print(f"Descuento ({porcentaje_descuento}%):      -${monto_desc:>8.2f}")
     print(f"TOTAL A PAGAR:      ${total_final:>8.2f}")
     print("="*35)
+
+def nueva_compra(productos):
+    if not productos:
+        print("No hay productos registrados")
+        return
+
+    confirmacion = input("Estás seguro de que deseas iniciar una nueva compra y vaciar la lista actual? (s/n): ").strip().lower()
+    if confirmacion == "s":
+        productos.clear()  
+        print("Se ha reiniciado la compra. La lista de productos ahora está vacía.\n")
+    else:
+        print(" Se conservan los productos actuales.\n")
+        
